@@ -1,0 +1,14 @@
+{
+  "name": "tvtracker",
+  "version": "1.0.0",
+  "description": "Web Application that saves the tv shows you are currently watching and serves as a personal DVR.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mathew Shaw",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
