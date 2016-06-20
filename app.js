@@ -2,6 +2,11 @@ var app = require('express')();
 
 app.set('port', process.env.PORT || 3000);
 
+app.get('/', function(req, res) {
+  res.type('text/plain');
+  res.send('TV Tracker');
+})
+
 app.use(function(req, res) {
           res.type('text/plain');
           res.status(404);
