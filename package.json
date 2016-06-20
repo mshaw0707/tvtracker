@@ -4,12 +4,16 @@
   "description": "Web Application that saves the tv shows you are currently watching and serves as a personal DVR.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "Mathew Shaw",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mshaw0707/tvtracker"
+  },
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0"
   }
 }
