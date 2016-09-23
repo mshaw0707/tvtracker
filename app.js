@@ -4,6 +4,29 @@ var hbs = require('express-handlebars');
 
 var app = express();
 
+var appdata = {
+  "tvshows": [
+    {
+      "id": 1,
+      "name": "Turn: Washington's Spies",
+      "channel": "AMC",
+      "day": "Monday"
+    },
+      {
+      "id": 2,
+      "name": "The Americans",
+      "channel": "FX",
+      "day": "Wednesday"
+    },
+      {
+      "id": 1,
+      "name": "Marvel's Agents of Shield",
+      "channel": "Fox",
+      "day": "Tuesday"
+    }
+  ]
+};
+
 app.set('port', process.env.PORT || 3000);
 
 app.engine('.hbs', hbs({defaultLayout: 'main', extname: '.hbs'}));
@@ -14,14 +37,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(__dirname + '/public'));
 
-app.use(function(req, res, next) {
-  res.locals.showTests = app.get('env') !== 'production' &&
-                         req.query.test === '1';
-  next();
+app.get('/', function(req, res) {
+  res.locals.allshows = appdata;
+  res.render('home');
 });
 
-app.get('/', function(req, res) {
-  res.render('home');
+app.get('/settings', function(req, res) {
+  res.render('settings');
 });
 
 app.use(function(req, res) {
@@ -36,5 +58,5 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(app.get('port'), function() {
-    console.log('Express server started on port ' + app.get('port'));
+  console.log('Express server started on port ' + app.get('port'));
 });

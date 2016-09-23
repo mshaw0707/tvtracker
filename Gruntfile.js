@@ -34,7 +34,7 @@ module.exports = function (grunt) {
     },
     watch: {
       express: {
-        files: ['app.js'],
+        files: ['app.js', 'views/**'],
         tasks: ['jshint', 'express:dev'],
         options: {
           spawn: false,

@@ -1,33 +1,23 @@
 <!doctype html>
 <html>
   <head>
-    <title>TV Tracker</title>
-    {{#if showTests}}
-      <link rel="stylesheet" href="/vendor/mocha.css">
-    {{/if}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="vendor/css/font-awesome.min.css">
     <script src="vendor/jquery-3.0.0.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+    <title>TV Tracker</title>
   </head>
 
-  <body>
-    <header>
-      <img src="/img/tv.png" alt="TV Tracker logo">
-    </header>
+  <body style="background-color: lightgray;">
+    {{> navbar}}
+
+    {{> header}}
 
     {{{body}}}
 
-    {{#if showTests}}
-      <div id="mocha"></div>
-      <script src="/vendor/mocha.js"></script>
-      <script src="/vendor/chai.js"></script>
-      <script>
-        mocha.ui('tdd');
-        var assert = chai.assert;
-      </script>
-      <script src="/qa/tests-global.js"></script>
-      {{#if pageTestScript}}
-        <script src="{{pageTestScript}}"></script>
-      {{/if}}
-      <script>mocha.run()</script>
-    {{/if}}
+    {{> footer}}
+    
   </body>
 </html>
