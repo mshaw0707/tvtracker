@@ -1,22 +1,24 @@
-{
+var data = {
   "tvshows": [
     {
       "id": 1,
       "name": "Turn: Washington's Spies",
       "channel": "AMC",
-      "day": "Monday"
+      "time": "Monday"
     },
       {
       "id": 2,
       "name": "The Americans",
       "channel": "FX",
-      "day": "Wednesday"
+      "time": "Wednesday"
     },
       {
-      "id": 1,
+      "id": 3,
       "name": "Marvel's Agents of Shield",
       "channel": "Fox",
-      "day": "Tuesday"
+      "time": "Tuesday"
     }
   ]
-}
+};
+
+module.exports = data;

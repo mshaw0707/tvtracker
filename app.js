@@ -4,28 +4,7 @@ var hbs = require('express-handlebars');
 
 var app = express();
 
-var appdata = {
-  "tvshows": [
-    {
-      "id": 1,
-      "name": "Turn: Washington's Spies",
-      "channel": "AMC",
-      "day": "Monday"
-    },
-      {
-      "id": 2,
-      "name": "The Americans",
-      "channel": "FX",
-      "day": "Wednesday"
-    },
-      {
-      "id": 1,
-      "name": "Marvel's Agents of Shield",
-      "channel": "Fox",
-      "day": "Tuesday"
-    }
-  ]
-};
+var appdata = require('./data');
 
 app.set('port', process.env.PORT || 3000);
 
