@@ -7,7 +7,7 @@ var dataLayer = (function () {
 
   this.shows = {
     all: function () {
-      return data;
+      return data.tvshows.sort(function (a, b) { return a.name > b.name; });
     },
     add: function (show) {
       data.idCounter += 1;
@@ -16,13 +16,15 @@ var dataLayer = (function () {
       jsonfile.writeFileSync(file, data);
     },
     delete: function(id) {
-      console.log(id);
       var toDeleteIndex;
-      var toDelete = data.tvshows.find(function (show, index) { toDeleteIndex = index; return show.id == id; });
-      console.log(toDelete);
-      console.log(toDeleteIndex);
+
+      var toDelete = data.tvshows.find(function (show, index) { 
+        if (show.id == id) toDeleteIndex = index; 
+        return show.id == id; 
+      });
+
       if (toDeleteIndex) {
-        delete data.tvshows[toDeleteIndex];
+        data.tvshows.splice(toDeleteIndex, 1);
         jsonfile.writeFileSync(file, data);
       }
     }
