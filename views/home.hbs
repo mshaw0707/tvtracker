@@ -4,6 +4,7 @@
       <th>Name</th>
       <th>Channel</th>
       <th>Time</th>
+      <th></th>
     </tr>
 
     {{#each allshows.tvshows}}
@@ -11,6 +12,7 @@
       <td>{{name}}</td>
       <td>{{channel}}</td>
       <td>{{time}}</td>
+      <td>{{{deleteLink this}}}</td>
     </tr>
     {{/each}}
   </table>
@@ -27,12 +29,12 @@
          </div>
          <div class="form-group">
            <div class="col-xs-6">
-             <input type="text" class="form-control" name="channel" value="Channel">            
+             <input type="text" class="form-control" name="channel" placeholder="Channel">            
            </div>
          </div>
          <div class="form-group">
            <div class="col-xs-6">
-             <input type="text" class="form-control" name="time" value="Time">             
+             <input type="text" class="form-control" name="time" placeholder="Time">             
            </div>
          </div>
          <div class="form-group">
